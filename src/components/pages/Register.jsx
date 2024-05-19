@@ -74,29 +74,6 @@ const Register = () => {
       return;
     }
 
-    // if (selectedImage) {
-    //   handleUploadImage(selectedImage)
-    //     .then((url) => {
-    //       createUser(email, password)
-    //         .then((result) => {
-    //           updateProfile(result.user, {
-    //             displayName: name,
-    //             photoURL: photo || url,
-    //           });
-    //           handleAlert("success", "User Created Successfully");
-    //         })
-
-    //         .catch((error) => {
-    //           handleAlert("error", `${error.message}`);
-    //           setLoading(false);
-    //         });
-    //     })
-    //     .catch((error) => {
-    //       handleAlert("error", `${error.message}`);
-    //       setLoading(false);
-    //     });
-    // } else {
-
     createUser(email, password)
       .then((result) => {
         updateProfile(result.user, {
@@ -122,7 +99,7 @@ const Register = () => {
       const result = await googleLogIn();
       const checkUser = await checkUserExists(result?.user?.email);
       if (checkUser) {
-        navigate("/dashboard/profile");
+        navigate("/");
         handleAlert("success", "User Logged In Successfully");
       } else {
         createRoles(
@@ -145,7 +122,7 @@ const Register = () => {
       const result = await fbLogIn();
       const checkUser = await checkUserExists(result?.user?.email);
       if (checkUser) {
-        navigate("/dashboard/profile");
+        navigate("/");
         handleAlert("success", "User Logged In Successfully");
       } else {
         createRoles(
@@ -161,17 +138,6 @@ const Register = () => {
       setLoading(false);
     }
   };
-
-  // const checkUserExists = (email) => {
-  //   axiosSecure.get(`${baseUrl}/users?email=${email}`).then((res) => {
-  //     if (res.data?.email == email) {
-  //       setUserData(res.data);
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   });
-  // };
 
   const checkUserExists = (email) => {
     if (userData.email == email) {

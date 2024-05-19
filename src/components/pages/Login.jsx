@@ -37,7 +37,7 @@ const Login = () => {
       const result = await googleLogIn();
       const checkUser = await checkUserExists(result?.user?.email);
       if (checkUser) {
-        navigate("/dashboard/profile");
+        navigate("/");
         handleAlert("success", "User Logged In Successfully");
       } else {
         createRoles(
@@ -60,7 +60,7 @@ const Login = () => {
       const result = await fbLogIn();
       const checkUser = await checkUserExists(result?.user?.email);
       if (checkUser) {
-        navigate("/dashboard/profile");
+        navigate("/");
         handleAlert("success", "User Logged In Successfully");
       } else {
         createRoles(
@@ -106,7 +106,7 @@ const Login = () => {
     axiosPublic.post(`/users?email=${email}`, userData).then((res) => {
       if (res.status == 201) {
         handleAlert("success", "User Logged In Successfully");
-        navigate("/dashboard/profile");
+        navigate("/");
       }
     });
   };

@@ -33,21 +33,9 @@ const AuthProvider = ({ children }) => {
           setUserData(res.data);
           setRoleLoading(false);
         });
-        // axiosPublic
-        //   .post(`/jwt`, loggedUser, {
-        //     withCredentials: true,
-        //   })
-        //   .then((res) => {
-        //     console.log(res.data);
-        //   });
+      
       }
-      // else {
-      //   axiosPublic
-      //     .post(`/logout`, loggedUser, { withCredentials: true })
-      //     .then((res) => {
-      //       console.log(res.data);
-      //     });
-      // }
+   
     });
     return () => {
       unsubscribe();
