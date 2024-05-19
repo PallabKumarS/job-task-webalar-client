@@ -77,16 +77,6 @@ const Login = () => {
     }
   };
 
-  // const checkUserExists = (email) => {
-  //   axiosSecure.get(`${baseUrl}/users?email=${email}`).then((res) => {
-  //     if (res.data?.email == email) {
-  //       setUserData(res.data);
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   });
-  // };
   const checkUserExists = (email) => {
     if (userData?.email == email) {
       return true;
