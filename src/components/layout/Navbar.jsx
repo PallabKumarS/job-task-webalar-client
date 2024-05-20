@@ -93,7 +93,7 @@ const NavBar = () => {
 
   return (
     <div
-      className="mx-auto navbar bg-base-100 opacity-90 sticky top-0 z-50 py-5"
+      className="mx-auto navbar sticky top-0 z-50 py-5 bg-[url('/sky.jpg')] bg-cover bg-no-repeat bg-center"
       style={{}}
     >
       <div className="navbar-start">
@@ -124,7 +124,7 @@ const NavBar = () => {
 
       <div className="navbar-end">
         {user && (
-          <p className="text-lg font-semibold text-blueViolet">
+          <p className="text-lg font-semibold text-blue-500">
             {user.displayName}
           </p>
         )}
@@ -154,10 +154,10 @@ const NavBar = () => {
           <label className="swap swap-rotate">
             <input onClick={toggleTheme} type="checkbox" />
             <div className="swap-on">
-              <BiSolidMoon className="text-2xl text-blueViolet"></BiSolidMoon>
+              <BiSolidMoon className="text-2xl text-blue-700"></BiSolidMoon>
             </div>
             <div className="swap-off">
-              <BsSun className="text-2xl text-blueViolet"></BsSun>
+              <BsSun className="text-2xl text-yellow-400"></BsSun>
             </div>
           </label>
         </div>

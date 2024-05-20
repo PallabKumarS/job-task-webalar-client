@@ -28,7 +28,7 @@ const AddTask = () => {
     });
   };
   return (
-    <div>
+    <div className="bg-[url('/help-desk.jpg')] bg-cover bg-center bg-no-repeat w-full h-screen pt-5">
       <Helmet>
         <title>Task Manager | Add Tasks</title>
       </Helmet>

@@ -48,7 +48,11 @@ const TaskCard = ({ task, refetch }) => {
     <div
       ref={dragRef}
       style={{ opacity: isDragging ? 0.5 : 1 }}
-      className=" bg-base-200 shadow-lg rounded-lg p-10"
+      className={`bg-base-200 shadow-lg rounded-lg p-10 card glass ${
+        task?.status === "todo" && "bg-yellow-800"
+      } ${task?.status === "ongoing" && "bg-lime-800"} ${
+        task?.status === "completed" && "bg-rose-800"
+      }`}
     >
       <p className="text-lg mb-2">{task?.taskName}</p>
       <p className="text-sm mb-2">{task?.description}</p>

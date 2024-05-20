@@ -93,16 +93,22 @@ const AllTask = () => {
   );
 
   return (
-    <CustomContainer className={`mt-10`}>
+    <CustomContainer
+      className={`mt-3 bg-[url('/building.jpg')] bg-cover bg-center bg-no-repeat w-full h-full rounded-lg`}
+    >
       <Helmet>
         <title>Task Manager | Management</title>
       </Helmet>
-      <h1 className="text-4xl font-bold text-center mb-20">Manage All Tasks</h1>
+      <h1 className="text-4xl font-bold text-center mb-14 pt-5 text-purple-500">
+        Manage All Tasks
+      </h1>
 
       {/* To Do section */}
-      <h1 className="text-2xl font-semibold text-center mb-5">To Do</h1>
+      <h1 className="text-2xl font-semibold text-center mb-5 text-yellow-500">
+        To Do
+      </h1>
 
-      <hr className="border-b-2 border-gray-500 mx-5"></hr>
+      <hr className="border-b-2 border-yellow-500 mx-5"></hr>
 
       <section
         ref={todoDrop}
@@ -120,13 +126,15 @@ const AllTask = () => {
       </section>
 
       {/* Ongoing section */}
-      <h1 className="text-2xl font-semibold text-center mb-5">Ongoing</h1>
+      <h1 className="text-2xl font-semibold text-center mb-5 text-lime-500">
+        Ongoing
+      </h1>
 
-      <hr className="border-b-2 border-gray-500 mx-5"></hr>
+      <hr className="border-b-2 border-lime-500 mx-5"></hr>
 
       <section
         ref={ongoingDrop}
-        className="mb-20 py-20 text-center flex flex-wrap gap-10 justify-around items-center"
+        className="mb-20 py-10 text-center flex flex-wrap gap-10 justify-around items-center"
       >
         {ongoingTasks &&
           ongoingTasks?.map((task, index) => (
@@ -140,9 +148,11 @@ const AllTask = () => {
       </section>
 
       {/* Completed section */}
-      <h1 className="text-2xl font-semibold text-center mb-5">Completed</h1>
+      <h1 className="text-2xl font-semibold text-center mb-5 text-rose-500">
+        Completed
+      </h1>
 
-      <hr className="border-b-2 border-gray-500 mx-5"></hr>
+      <hr className="border-b-2 border-rose-500 mx-5"></hr>
 
       <section
         ref={completedDrop}
